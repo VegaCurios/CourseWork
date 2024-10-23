@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS customers (ID INTEGER PRIMARY KEY,username VARCHAR(20) unique,password VARCHAR(100));
+INSERT INTO customers (username, password) VALUES(?, ?)
+CREATE TABLE IF NOT EXISTS ! (userID INTEGER DEFAULT !, ID INTEGER PRIMARY KEY, title TEXT, graphics TEXT, devoloper TEXT, releaseYear VARCHAR(4),hours INTEGER, rating REAL(3, 1), comm TEXT, FOREIGN KEY (userID) REFERENCES customers(ID) ON DELETE CASCADE)
+INSERT INTO ! (title, graphics, devoloper, releaseYear,hours, rating, comm) VALUES(?, ?, ?, ?, ?, ?, ?)
+DELETE FROM ! WHERE title = ?
+UPDATE ! SET title=?, graphics=?, devoloper=?, releaseYear=?, hours=?, rating=?, comm=? WHERE title = ?
+SELECT title, graphics, devoloper, releaseYear, hours, rating, comm FROM
+SELECT * FROM customers WHERE username=?
+SELECT ID,password FROM customers WHERE username=?
+SELECT title FROM ! WHERE title=?
+SELECT title, graphics, devoloper, releaseYear, hours, rating, comm FROM ! WHERE title=?
+SELECT username FROM customers
+DELETE FROM !
